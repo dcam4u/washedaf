@@ -139,4 +139,26 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Back to Top Button
+  const backToTop = document.getElementById("backToTop");
+
+  if (backToTop) {
+    // Show/hide button based on scroll position
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 500) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    });
+
+    // Scroll to top on click
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
 });

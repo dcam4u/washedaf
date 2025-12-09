@@ -777,6 +777,90 @@ footer {
   color: var(--color-gray);
 }
 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-credit {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.footer-credit .heart-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-blush-dark);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.footer-credit a {
+  color: var(--color-sage);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.footer-credit a:hover {
+  color: var(--color-warm-white);
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Back to Top Button
+   -------------------------------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--color-charcoal);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: var(--transition-smooth);
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--color-sage-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(155, 181, 160, 0.3);
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-warm-white);
+}
+
 /* --------------------------------------------------------------------------
    Responsive - Tablet
    -------------------------------------------------------------------------- */
@@ -873,5 +957,8 @@ footer {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+  .footer-brand {
+    align-items: center;
   }
 }
